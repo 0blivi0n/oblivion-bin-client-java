@@ -1,4 +1,4 @@
-mercury-java-client
+oblivion-bin-client
 ===================
 
 ##Introduction
