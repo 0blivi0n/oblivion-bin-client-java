@@ -24,7 +24,7 @@ Maven dependency:
  ```java
 Oblivion oblivion = Oblivion.builder()
 		.server("uiqui.net")
-		.build();
+		.build(); // uses default port
 	
 // Obtain server's version
 System.out.println("Oblivion-cache " + oblivion.version());
@@ -49,11 +49,12 @@ CacheContext<List<String>> listCache = oblivion.newCacheContext("lists");
 ### Store data
 
  ```java
-JSON jrocha = new JSON().field("id", 1)
+JSON jrocha = new JSON()
+		.field("id", 1)
 		.field("name", "Joaquim Rocha")
 		.field("languages", Arrays.asList("Erlang", "JAVA", "Ruby"));
 
-// PUT method return cache entry version
+// PUT method returns cache entry version
 long jrVersion = docCache.put("jrocha", jrocha);
 
 // Keys are automatically converted to string
@@ -74,20 +75,20 @@ Value<Long> l2 = longCache.getValue(2L);
 System.out.println("content: " + l2.getValue());
 System.out.println("version: " + l2.getVersion());
 
-// We can retieve the cache entry version alone using the method version()
+// We can retieve the cache entry version alone using the version() method
 long nplVersion = listCache.version("nice programing languages");
 
-// We can obtain the size of the cache
+// We can obtain the size of the cache using the size() method
 long size = docCache.size();
 
-// And obtain the list of all keys stored in the cache
+// And obtain the list of all keys stored in the cache using the keys() method
 List<String> longKeys = longCache.keys();
  ```  
  
 ### Delete data
 
  ```java
-// Delete entry if not changed
+// Delete entry if entry didn't changed
 docCache.delete(jrocha, jrVersion);
 
 longCache.delete(1L);
