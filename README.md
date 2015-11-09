@@ -14,7 +14,7 @@ Maven dependency:
 <dependency>
     <groupId>org.oblivion-cache</groupId>
     <artifactId>oblivion-bin-client</artifactId>
-    <version>0.5.0</version>
+    <version>0.5.1</version>
 </dependency>
  ```
 ##Examples
