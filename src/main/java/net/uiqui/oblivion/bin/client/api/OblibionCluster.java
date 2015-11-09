@@ -44,13 +44,9 @@ public class OblibionCluster extends MercuryConnectionFactory {
 	}
 	
 	@Override
-	public String server() {
-		return currentServer().getServer();
-	}
-
-	@Override
-	public int port() {
-		return currentServer().getPort();
+	public MercuryConnection create() throws Exception {
+		final Server currentServer = currentServer();
+		return new MercuryConnection(currentServer.getServer(), currentServer.getPort());
 	}	
 	
 	private Server currentServer() {
