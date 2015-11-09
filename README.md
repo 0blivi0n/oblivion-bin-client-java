@@ -72,8 +72,8 @@ JSON jrocha = docCache.get("jrocha");
 
 // We can retrieve a Value object with the cache entry content and it's version
 Value<Long> l2 = longCache.getValue(2L);
-System.out.println("content: " + l2.getValue());
-System.out.println("version: " + l2.getVersion());
+System.out.println("content: " + l2.content());
+System.out.println("version: " + l2.version());
 
 // We can retieve the cache entry version alone using the version() method
 long nplVersion = listCache.version("nice programing languages");

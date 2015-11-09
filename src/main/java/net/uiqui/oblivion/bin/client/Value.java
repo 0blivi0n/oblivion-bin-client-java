@@ -25,23 +25,23 @@ public class Value<T> implements Serializable {
 	private static final long serialVersionUID = -5104244319327255679L;
 
 	private long version = 0;
-	private T value = null;
+	private T content = null;
 
-	protected Value(final T value, final long version) {
-		this.value = value;
+	protected Value(final T content, final long version) {
+		this.content = content;
 		this.version = version;
 	}
 
-	public long getVersion() {
+	public long version() {
 		return version;
 	}
 
-	public T getValue() {
-		return value;
+	public T content() {
+		return content;
 	}
 
 	@Override
 	public String toString() {
-		return "Value[value=" + value + ", version=" + version + "]";
+		return "Value[content=" + content + ", version=" + version + "]";
 	}
 }

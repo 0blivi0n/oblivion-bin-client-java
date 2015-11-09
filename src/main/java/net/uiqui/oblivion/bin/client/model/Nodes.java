@@ -25,7 +25,7 @@ import java.util.List;
 import net.uiqui.oblivion.mercury.api.JSON;
 
 public class Nodes {
-	public static List<Server> getOnlineNodes(final List<JSON> nodes) {
+	public static List<Server> onlineNodes(final List<JSON> nodes) {
 		List<Server> ret = new ArrayList<Server>();
 		
 		for (JSON node : nodes) {

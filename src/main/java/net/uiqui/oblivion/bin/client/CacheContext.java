@@ -49,7 +49,7 @@ public class CacheContext<T> {
 			return null;
 		}
 		
-		return (T) value.getContent();
+		return (T) value.content();
 	}	
 
 	@SuppressWarnings("unchecked")
@@ -61,7 +61,7 @@ public class CacheContext<T> {
 			return null;
 		}
 		
-		return new Value<T>((T) value.getContent(), value.getVersion());
+		return new Value<T>((T) value.content(), value.version());
 	}	
 
 	public long put(final Object key, final T value) throws IOException, CacheException {

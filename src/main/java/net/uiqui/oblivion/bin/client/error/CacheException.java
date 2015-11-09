@@ -37,14 +37,14 @@ public class CacheException extends Exception {
 		return reason;
 	}
 	
-	public static CacheException build(final Long status, final JSON error) {
+	public static CacheException build(final Long status, final JSON json) {
 		final Reason reason = new Reason();
-		reason.setError(status);
+		reason.error(status);
 		
-		if (error != null) {
-			reason.setReason((String) error.value("reason"));
+		if (json != null) {
+			reason.reason((String) json.value("reason"));
 		} else {
-			reason.setReason("MERCURY_INTERNAL_SERVER_ERROR");
+			reason.reason("MERCURY_INTERNAL_SERVER_ERROR");
 		}
 		
 		return new CacheException(reason);

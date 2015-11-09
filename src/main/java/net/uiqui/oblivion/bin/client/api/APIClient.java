@@ -51,7 +51,7 @@ public class APIClient {
 		if (response.status() == 200) {
 			final JSON json = response.payload();
 			final List<JSON> caches = json.value("caches");
-			return Caches.getCaches(caches);
+			return Caches.cacheNames(caches);
 		} else {
 			throw error(response);
 		}
@@ -176,7 +176,7 @@ public class APIClient {
 		if (response.status() == 200) {
 			final JSON json = response.payload();
 			final List<JSON> nodes =  json.value("nodes");
-			return Nodes.getOnlineNodes(nodes);
+			return Nodes.onlineNodes(nodes);
 		} else {
 			throw error(response);
 		}

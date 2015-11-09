@@ -28,19 +28,11 @@ public class Response {
 		this.version = version;
 	}
 
-	public long getVersion() {
+	public long version() {
 		return version;
 	}
 
-	public void setVersion(long version) {
-		this.version = version;
-	}
-
-	public Object getContent() {
+	public Object content() {
 		return content;
-	}
-
-	public void setContent(Object content) {
-		this.content = content;
 	}
 }

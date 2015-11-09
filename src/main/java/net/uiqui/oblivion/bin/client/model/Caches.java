@@ -25,7 +25,7 @@ import java.util.List;
 import net.uiqui.oblivion.mercury.api.JSON;
 
 public class Caches {
-	public static List<String> getCaches(final List<JSON> caches) {
+	public static List<String> cacheNames(final List<JSON> caches) {
 		final List<String> list = new ArrayList<String>();
 		
 		for (JSON elem : caches) {

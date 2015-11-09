@@ -28,11 +28,11 @@ public class Server {
 		this.port = port;
 	}
 
-	public String getServer() {
+	public String server() {
 		return server;
 	}
 
-	public int getPort() {
+	public int port() {
 		return port;
 	}
 }

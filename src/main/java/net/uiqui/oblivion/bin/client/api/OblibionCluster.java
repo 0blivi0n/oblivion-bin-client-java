@@ -26,6 +26,7 @@ import java.util.TimerTask;
 
 import net.uiqui.oblivion.bin.client.error.CacheException;
 import net.uiqui.oblivion.bin.client.model.Server;
+import net.uiqui.oblivion.mercury.io.MercuryConnection;
 import net.uiqui.oblivion.mercury.io.MercuryConnectionFactory;
 
 public class OblibionCluster extends MercuryConnectionFactory {
@@ -46,11 +47,11 @@ public class OblibionCluster extends MercuryConnectionFactory {
 	@Override
 	public MercuryConnection create() throws Exception {
 		final Server currentServer = currentServer();
-		return new MercuryConnection(currentServer.getServer(), currentServer.getPort());
+		return new MercuryConnection(currentServer.server(), currentServer.port());
 	}	
 	
 	private Server currentServer() {
-		Server server = servers.current();
+		final Server server = servers.current();
 		
 		if (server == null) {
 			return defaultServer;
@@ -88,7 +89,7 @@ public class OblibionCluster extends MercuryConnectionFactory {
 				current = new Node(value, null);
 				current.next = current;
 			} else {
-				Node next = current.next;
+				final Node next = current.next;
 				current.next = new Node(value, next);
 			}
 		}

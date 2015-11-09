@@ -23,19 +23,19 @@ public class Reason {
 	private Long error = null;
 	private String reason = null;
 
-	public Long getError() {
+	public Long error() {
 		return error;
 	}
 
-	public void setError(Long error) {
+	public void error(final Long error) {
 		this.error = error;
 	}
 
-	public String getReason() {
+	public String reason() {
 		return reason;
 	}
 
-	public void setReason(String reason) {
+	public void reason(final String reason) {
 		this.reason = reason;
 	}
 
