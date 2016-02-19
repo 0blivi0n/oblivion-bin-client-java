@@ -89,7 +89,7 @@ List<String> longKeys = longCache.keys();
 
  ```java
 // Delete entry if entry didn't changed
-docCache.delete(jrocha, jrVersion);
+docCache.delete("jrocha", jrVersion);
 
 longCache.delete(1L);
 
